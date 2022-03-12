@@ -58,7 +58,10 @@ public class FillRequestDMSFormTest extends BaseTests {
     check.click();
     check.submit();
 
-    waitUntilElementToBeVisible(
-        By.xpath("//span[contains(text(), 'Введите корректный адрес электронной почты')]"));
+    wait.until(
+        ExpectedConditions.textToBe(
+            By.xpath("//span[contains(text(), 'Введите корректный адрес электронной почты')]"),
+            "Введите корректный адрес электронной почты"));
+
   }
 }
